@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <style>
+        #output {
+            border: 1px solid rgb(170, 170, 170);
+            margin: 20px 10px;
+            border-radius: 10px;
+            padding: 40px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Messages</h1>
+    <button type="button" class="btn btn-primary" onclick="show(1)">
+        Messages <span class="badge bg-danger">1</span>
+    </button>
+    <button type="button" class="btn btn-success" onclick="show(2)">
+        Messages <span class="badge bg-danger">2</span>
+    </button>
+    <button type="button" class="btn btn-danger" onclick="show(3)">
+        Messages <span class="badge bg-danger">3</span>
+    </button>
+
+    <div id="output"></div>
+
+    <script>
+
+        let Show = {
+            1: [
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+                "consectetur adipisicing elit consectetur adipisicing elit",
+            ],
+            2: [
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+                "consectetur adipisicing elit consectetur adipisicing elit",
+                " Aspernatur omnis! consectetur adipisicing elit"
+            ],
+            3: [
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+            ]
+        };
+        documet.getElementById("badge1").textContent = Show[1].length;
+        documet.getElementById("badge2").textContent = Show[2].length;
+        documet.getElementById("badge3").textContent = Show[3].length;
+
+        function show(btnNumbers) {
+            let box = document.getElementById("output");
+            box.innerHTML = "";
+            debugger
+
+            for (let i = 0; i < Show[btnNumbers].length; i++) {
+                let p = document.createElement("p");
+                p.textContent = Show[btnNumbers][i];
+                box.appendChild(p);
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>
